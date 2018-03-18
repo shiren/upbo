@@ -1,12 +1,12 @@
 ;;; upbo.el --- Karma Test Runner Emacs Integration ;;; -*- lexical-binding: t; -*-
 ;;
 ;; Filename: upbo.el
-;; Description: karma Test Runner Emacs Integration
+;; Description: Karma test runner emacs integration that support mode line report
 ;; Author: Sungho Kim(shiren)
 ;; Maintainer: Sungho Kim(shiren)
 ;; URL: http://github.com/shiren
-;; Version: 0.0.0
-;; Package-Requires: ((pkg-info "0.4") (emacs "24"))
+;; Version: 1.0.0
+;; Package-Requires: ((dash "2.13.0") (emacs "24"))
 ;; Keywords: javascript, js, testing, karma
 
 ;; This file is not part of GNU Emacs.
@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 
-;;  Karma Test Runner Emacs Integration
+;;  Emacs karma integration that support mode line report!
 
 ;;  Usage:
 ;; (upbo-define-test
@@ -39,11 +39,11 @@
 (require 'ansi-color)
 
 (defgroup upbo nil
-  "Karma Emacs Integration"
+  "Emacs karma integration that support mode line report"
   :prefix "upbo-"
   :group 'applications
-  :link '(url-link :tag "Github" "https://github.com/shiren")
-  :link '(emacs-commentary-link :tag "Commentary" "karma"))
+  :link '(url-link :tag "Github" "https://github.com/shiren/upbo")
+  :link '(emacs-commentary-link :tag "Commentary"))
 
 (defvar upbo-configs nil)
 
@@ -218,10 +218,10 @@ NIL if the current directory is not in a Git repo."
     (define-key map (kbd "C-c u w") 'upbo-karma-auto-watch)
     (define-key map (kbd "C-c u t") 'upbo-testtest)
     map)
-  "The keymap used when `upbo-mode' is active.")
+  "The keymap used when function `upbo-mode' is active.")
 
 (defun upbo-mode-hook ()
-  "Hook which enables `upbo-mode'."
+  "Hook which enables function `upbo-mode'."
   (upbo-mode 1))
 
 (defun upbo-testtest ()
