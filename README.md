@@ -1,10 +1,12 @@
 # upbo
-> :curly_loop: Emacs karma integration that support mode line report!
-Upbo is the Korean pronunciation of karma.
+> :curly_loop: Emacs Javascript Test Runner integration that support mode line report!
 
-* [Features](#Features)
-* [Installation](#Installation)
-* [Getting Started](#Getting Started)
+Upbo is the Korean pronunciation of karma.
+Currently we support Karma test runner but we will support jest in the future.
+
+* [Features](#features)
+* [Installation](#installation)
+* [Getting Started](#getting-started)
 
 ## Features
 
