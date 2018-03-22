@@ -9,8 +9,14 @@ Upbo is the Korean pronunciation of karma.
 ## Features
 
 ### Mode line reporting (upbo minor mode)
+
+#### Success
 ![SUCCESS](https://user-images.githubusercontent.com/389021/37750016-2023624c-2dce-11e8-8dbf-449e54147f3c.png)
+
+#### Failed
 ![FAILED](https://user-images.githubusercontent.com/389021/37750013-1aea8788-2dce-11e8-98e0-3a7f41c7d111.png)
+
+#### Error
 ![ERROR](https://user-images.githubusercontent.com/389021/37750020-23ad1a66-2dce-11e8-871b-765269ec1549.png)
 
 ### And also terminal log view(upbo view mode)
