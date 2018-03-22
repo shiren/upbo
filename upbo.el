@@ -119,7 +119,6 @@
                        (when (upbo-get-browsers-from-config)
                          (list "--browsers" (upbo-get-browsers-from-config)))
                        args)))
-    (print process-args)
     (apply 'start-process-shell-command process-args))
 
   (set-process-filter (get-buffer-process upbo-view-buffer-name) 'upbo-minor-process-filter))
