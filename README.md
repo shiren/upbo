@@ -25,6 +25,29 @@ Currently we support Karma test runner but we will support Jest in the future.
 ![TERMINAL](https://user-images.githubusercontent.com/389021/37750023-2703983e-2dce-11e8-988f-22a14f95d40f.png)
 
 ## Installation
+### Using package.el
+
+You can install upbo with package-insgtall:
+
+`M-x package-install [RET] karma [RET]`
+
+Or by add following code to emacs initialize file
+
+``` emacs-lisp
+(unless (package-installed-p 'karma)
+  (package-install 'karma))
+```
+
+If the installation have problem try package-refresh-contents:
+
+`M-x package-refresh-contents [RET]`
+
+### Using use-package
+
+``` emacs-lisp
+(use-package upbo
+  :ensure t)
+```
 
 ## Getting Started
 Upbo recognizes project in the current buffer based on the git root.
