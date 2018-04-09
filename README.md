@@ -75,9 +75,9 @@ Upbo uses `upbo-karma-command` variable as `karma-cli` path. If `upbo-karma-comm
 
 Keybinding           | Description
 ---------------------|---------------
-<kbd>C-c, u, s</kbd> | Execute karma single run.
-<kbd>C-c , s s</kbd> | Execute karma with auto watch.
-<kbd>C-c, u, r</kbd> | Open project upbo process view, you need to run karma first.
+<kbd>C-c, C-u, s</kbd> | Execute karma single run.
+<kbd>C-c, C-u, w</kbd> | Execute karma with auto watch.
+<kbd>C-c, C-u, r</kbd> | Open project upbo process view, you need to run karma first.
 
 #### In upbo view mode
 
