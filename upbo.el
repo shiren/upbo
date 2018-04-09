@@ -28,7 +28,7 @@
 
 ;;  Emacs karma integration that support mode line report!
 
-;;  Usage:
+;;  Test Setup Usage:
 ;; (upbo-define-test
 ;;  :path "~/tui.chart/"
 ;;  :browsers "ChromeHeadless"
