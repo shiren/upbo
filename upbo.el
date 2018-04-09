@@ -1,4 +1,4 @@
-;;; upbo.el --- Karma Test Runner Emacs Integration ;;; -*- lexical-binding: t; -*-
+;;; upbo.el --- Karma Test Runner Integration ;;; -*- lexical-binding: t; -*-
 ;;
 ;; Filename: upbo.el
 ;; Description: Karma test runner emacs integration that support mode line report
@@ -6,8 +6,8 @@
 ;; Maintainer: Sungho Kim(shiren)
 ;; URL: http://github.com/shiren
 ;; Version: 1.0.0
-;; Package-Requires: ((dash "2.13.0") (emacs "24"))
-;; Keywords: javascript, js, testing, karma
+;; Package-Requires: ((dash "2.12.0") (emacs "24.4"))
+;; Keywords: javascript, js, test, karma
 
 ;; This file is not part of GNU Emacs.
 
@@ -37,6 +37,8 @@
 ;;; Code:
 (require 'dash)
 (require 'ansi-color)
+
+(autoload 'vc-git-root "vc-git")
 
 (defgroup upbo nil
   "Emacs karma integration that support mode line report"
@@ -68,9 +70,7 @@
   (interactive)
   (let* ((buffer-name (upbo-get-view-buffer-name))
          (upbo-view-buffer (get-buffer buffer-name)))
-    (unless upbo-view-buffer
-      (generate-new-buffer buffer-name))
-    (with-current-buffer upbo-view-buffer
+    (with-current-buffer (get-buffer-create upbo-view-buffer)
       (unless (string= major-mode "upbo-view-mode")
         (upbo-view-mode))
       (switch-to-buffer upbo-view-buffer))))
@@ -176,11 +176,7 @@
   (concat "*upbo:" (upbo-git-root-dir) "*"))
 
 (defun upbo-git-root-dir ()
-  "Return the current directory's root Git repo directory, or))
-NIL if the current directory is not in a Git repo."
-  (let ((dir (locate-dominating-file default-directory ".git")))
-    (when dir
-      (file-name-directory dir))))
+  (vc-git-root (buffer-name)))
 
 (defun upbo-get-project-config-by-path (path)
   (-first (lambda (config)
@@ -212,16 +208,12 @@ NIL if the current directory is not in a Git repo."
 
 (defvar upbo-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c u r") 'upbo-open-upbo-view)
-    (define-key map (kbd "C-c u s") 'upbo-karma-single-run)
-    (define-key map (kbd "C-c u w") 'upbo-karma-auto-watch)
-    (define-key map (kbd "C-c u t") 'upbo-testtest)
+    (define-key map (kbd "C-c C-u r") 'upbo-open-upbo-view)
+    (define-key map (kbd "C-c C-u s") 'upbo-karma-single-run)
+    (define-key map (kbd "C-c C-u w") 'upbo-karma-auto-watch)
+    (define-key map (kbd "C-c C-u t") 'upbo-testtest)
     map)
   "The keymap used when function `upbo-mode' is active.")
-
-(defun upbo-mode-hook ()
-  "Hook which enables function `upbo-mode'."
-  (upbo-mode 1))
 
 (defun upbo-testtest ()
   "Just for test."
@@ -246,8 +238,8 @@ Key bindings:
   :global nil
   :keymap 'upbo-mode-map)
 
-(add-hook 'js-mode-hook 'upbo-mode-hook)
-(add-hook 'js2-mode-hook 'upbo-mode-hook)
+(add-hook 'js-mode-hook 'upbo-mode)
+(add-hook 'js2-mode-hook 'upbo-mode)
 
 (provide 'upbo)
 ;;; upbo.el ends here
