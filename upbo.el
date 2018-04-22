@@ -1,4 +1,4 @@
-;;; upbo.el --- Karma Test Runner Integration ;;; -*- lexical-binding: t; -*-
+;;; upbo.el --- Karma Test Runner Integration  -*- lexical-binding: t -*-
 ;;
 ;; Filename: upbo.el
 ;; Description: Karma test runner emacs integration that support mode line report
