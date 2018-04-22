@@ -28,6 +28,11 @@
 
 ;;  Emacs karma integration that support mode line report!
 
+;;  To enable, use:
+;;     (add-hook javascript-mode-hook 'upbo-mode)
+;;  or
+;;     (add-hook js2-mode-hook 'upbo-mode)
+
 ;;  Test Setup Usage:
 ;; (upbo-define-test
 ;;  :path "~/tui.chart/"
@@ -237,9 +242,6 @@ Key bindings:
   :group 'upbo
   :global nil
   :keymap 'upbo-mode-map)
-
-(add-hook 'js-mode-hook 'upbo-mode)
-(add-hook 'js2-mode-hook 'upbo-mode)
 
 (provide 'upbo)
 ;;; upbo.el ends here
