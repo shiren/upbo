@@ -42,6 +42,12 @@ If the installation have problem try package-refresh-contents:
 
 `M-x package-refresh-contents [RET]`
 
+To enable in major buffer automatically, add upbo-mode to your major buffer mode hook like this:
+``` emacs-lisp
+(add-hook javascript-mode-hook 'upbo-mode)
+(add-hook js2-mode-hook 'upbo-mode)
+```
+
 ### Using use-package
 
 ``` emacs-lisp
