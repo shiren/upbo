@@ -49,6 +49,13 @@ If the installation have problem try package-refresh-contents:
   :ensure t)
 ```
 
+## Getting Started
+Upbo recognizes project in the current buffer based on the git root.
+You can apply project-specific test settings using the `define-upbo-test` function in your `init.el`
+If you have not set up the project, upbo will find the `kama.conf.js` in git root.
+
+Upbo uses `upbo-karma-command` variable as `karma-cli` path. If `upbo-karma-command` is nil, then by default it looks for a karma executable in global, and if it does not find it, it tries to execute in the project using npx.
+
 ### Enable upbo mode
 
 To enable in major buffer automatically, add upbo-mode to your major buffer mode hook like this:
@@ -56,13 +63,6 @@ To enable in major buffer automatically, add upbo-mode to your major buffer mode
 (add-hook javascript-mode-hook 'upbo-mode)
 (add-hook js2-mode-hook 'upbo-mode)
 ```
-
-## Getting Started
-Upbo recognizes project in the current buffer based on the git root.
-You can apply project-specific test settings using the `define-upbo-test` function in your `init.el`
-If you have not set up the project, upbo will find the `kama.conf.js` in git root.
-
-Upbo uses `upbo-karma-command` variable as `karma-cli` path. If `upbo-karma-command` is nil, then by default it looks for a karma executable in global, and if it does not find it, it tries to execute in the project using npx.
 
 ### define-upbo-test
 
