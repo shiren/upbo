@@ -29,13 +29,13 @@ Currently It only support Karma test runner but will support Jest soon.
 
 You can install upbo with package-insgtall:
 
-`M-x package-install [RET] karma [RET]`
+`M-x package-install [RET] upbo [RET]`
 
 Or by add following code to emacs initialize file
 
 ``` emacs-lisp
-(unless (package-installed-p 'karma)
-  (package-install 'karma))
+(unless (package-installed-p 'upbo)
+  (package-install 'upbo))
 ```
 
 If the installation have problem try package-refresh-contents:
