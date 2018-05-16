@@ -27,7 +27,7 @@ Currently It only support Karma test runner but will support Jest soon.
 ## Installation
 ### Using package.el
 
-You can install upbo with package-insgtall:
+You can install upbo with package-install:
 
 `M-x package-install [RET] upbo [RET]`
 
